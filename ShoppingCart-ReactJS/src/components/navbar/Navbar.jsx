@@ -4,7 +4,7 @@ import NavbarRight from './navbaritem/NavbarRight'
 
 const Navbar = () => {
   return (
-    <div className='flex items-center justify-between'>
+    <div className='flex items-center justify-between my-5'>
         <NavbarLeft/>
         <NavbarRight/>
     </div>
