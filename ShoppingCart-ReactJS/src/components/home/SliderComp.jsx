@@ -12,14 +12,12 @@ const SliderComp = () => {
   return (
     <div>
         <Slider {...settings}>
-    <div className=' !flex items-center'>
       <div>
-        <div className='text-5xl font-bold'>Our best products!</div>
-        <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit corporis voluptate voluptatibus tempora sunt sequi quasi laborum esse dignissimos a voluptatum perspiciatis quaerat quod facere, provident ipsam eligendi doloribus iste?</div>
-        <div>incele</div>
-        <img src='' alt='nike1'/>
+            <div> <img src='https://raw.githubusercontent.com/RidvanOzturk/ShoppingCart-ReactJS/main/ShoppingCart-ReactJS/src/assets/images/nike1.png' alt=''/>
+           </div>
+            <div> <img src='https://raw.githubusercontent.com/RidvanOzturk/ShoppingCart-ReactJS/main/ShoppingCart-ReactJS/src/assets/images/nike2.png' alt=''/>
+           </div>
       </div>
-    </div>
         </Slider>
   </div>
   )
