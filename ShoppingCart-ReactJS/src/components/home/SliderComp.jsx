@@ -32,7 +32,7 @@ const SliderComp = () => {
           />
         </div>
         <div className="!flex items-center bg-gray-100 px-6">
-        <div className="">
+          <div className="">
             <div className="text-6xl font-bold">Quality is no coincidence!</div>
             <div className="text-lg my-3">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.

@@ -3,16 +3,17 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+body {
     font-family: 'Nunito', sans-serif;
 }
 
-.paginate{
+.paginate {
     display: flex;
     align-items: center;
     justify-content: end;
 }
-.paginate li{
+
+.paginate li {
     width: 30px;
     height: 30px;
     border: 1px solid rgb(161, 161, 161);

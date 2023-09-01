@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getProducts } from "../../redux/productSlice";
+import { getCategoryProducts, getProducts } from "../../redux/productSlice";
 import Product from "./Product";
 import Loading from "../Loading";
-import ReactPaginate from 'react-paginate';
+import ReactPaginate from "react-paginate";
 
-const Products = () => {
+const Products = ({ category }) => {
   const dispatch = useDispatch();
-  const { products, productsStatus } = useSelector((state) => state.products);  
+  const { products, productsStatus } = useSelector((state) => state.products);
   const [itemOffset, setItemOffset] = useState(0);
 
   // Simulate fetching items from another resources.
   // (This could be items from props; or items loaded in a local state
   // from an API endpoint with useEffect and useState)
-  const itemsPerPage =6;
+  const itemsPerPage = 6;
   const endOffset = itemOffset + itemsPerPage;
   console.log(`Loading items from ${itemOffset} to ${endOffset}`);
   const currentItems = products.slice(itemOffset, endOffset);
@@ -27,18 +27,21 @@ const Products = () => {
     );
     setItemOffset(newOffset);
   };
- 
 
   console.log(products, "products");
 
   useEffect(() => {
-    dispatch(getProducts());
-  }, [dispatch]);
+    if (category) {
+      dispatch(getCategoryProducts(category));
+    } else {
+      dispatch(getProducts());
+    }
+  }, [dispatch, category]);
   return (
     <div>
       {productsStatus == "LOADING" ? (
         <Loading />
-      ) : 
+      ) : (
         <>
           <div className="flex flex-wrap">
             {currentItems?.map((product, i) => (
@@ -56,7 +59,7 @@ const Products = () => {
             renderOnZeroPageCount={null}
           />
         </>
-      }
+      )}
     </div>
   );
 };
