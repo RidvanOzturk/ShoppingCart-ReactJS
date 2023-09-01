@@ -1,9 +1,9 @@
 import React from "react";
 
-const Sorting = () => {
+const Sorting = ({setSort}) => {
   return (
     <div className="bg-gray-100 my-5 py-5 px-2 flex items-center justify-end">
-      <select className="bg-white py-3 px-5" name="" id="">
+      <select onChange={e=> setSort(e.target.value)} className="bg-white py-3 px-5" name="" id="">
         <option disabled value="">
           Choose one
         </option>
