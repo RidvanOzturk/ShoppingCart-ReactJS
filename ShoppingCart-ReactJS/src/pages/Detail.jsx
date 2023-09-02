@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
 import { getProductsDetail } from '../redux/productSlice';
+import Loading from "../components/Loading"
+import DetailComp from '../components/detail/DetailComp';
 
 const Detail = () => {
     const {id}=  useParams();
@@ -14,7 +16,12 @@ useEffect(()=>{
 console.log(productDetail,"productDetail");
 
   return (
-    <div>Detail</div>
+    <div>
+        {
+            productDetailStatus== "LOADING" ? <Loading/> : <DetailComp productDetail={productDetail}/>
+        }
+        
+    </div>
   )
 }
 
