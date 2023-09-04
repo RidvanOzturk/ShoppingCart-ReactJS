@@ -4,11 +4,12 @@ const DetailComp = ({ productDetail }) => {
   const [quantity, setQuantity] = useState(0);
 
   const decrement = () => {
-    if (quantity > 0 ) setQuantity(quantity-1);
-  }
+    if (quantity > 0) setQuantity(quantity - 1);
+  };
   const increment = () => {
-    if (quantity < productDetail?.rating?.count)   setQuantity(quantity+1);
-  }
+    if (quantity < productDetail?.rating?.count) setQuantity(quantity + 1);
+  };
+  const addBasket = () => {};
 
   console.log(productDetail);
   return (
@@ -33,15 +34,22 @@ const DetailComp = ({ productDetail }) => {
         </div>
 
         <div className="flex items-center gap-5 my-4 border w-[150px] text-center justify-center rounded-xl">
-          <div onClick={decrement} className="text-5xl cursor-pointer">-</div>
+          <div onClick={decrement} className="text-5xl cursor-pointer">
+            -
+          </div>
           <input
             className="w-11 text-center text-4xl font-bold"
             type="text"
             value={quantity}
           />
-          <div onClick={increment} className="text-4xl cursor-pointer">+</div>
+          <div onClick={increment} className="text-4xl cursor-pointer">
+            +
+          </div>
         </div>
-        <div className="my-4 border w-[200px] text-2xl bg-gray-200 cursor-pointer h-16 flex items-center justify-center rounded-md">
+        <div
+          onClick={addBasket}
+          className="my-4 border w-[200px] text-2xl bg-gray-200 cursor-pointer h-16 flex items-center justify-center rounded-md"
+        >
           Add to Cart
         </div>
       </div>
