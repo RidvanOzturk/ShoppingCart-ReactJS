@@ -11,16 +11,16 @@ const Detail = () => {
     const {productDetail, productDetailStatus} = useSelector(state =>state.products)
 
 useEffect(()=>{
-    dispatch(getProductsDetail())
+    dispatch(getProductsDetail(id))
 },[dispatch,id])
-console.log(productDetail,"productDetail");
+
+console.log(productDetail);
 
   return (
     <div>
         {
-            productDetailStatus== "LOADING" ? <Loading/> : <DetailComp productDetail={productDetail}/>
-        }
-        
+            productDetailStatus === "LOADING" ? <Loading/> : <DetailComp productDetail={productDetail}/>
+        } 
     </div>
   )
 }

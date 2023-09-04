@@ -7,7 +7,9 @@ const initialState = {
   productDetail: [],
   productDetailStatus: STATUS.IDLE,
 };
-export const getProducts = createAsyncThunk("getproducts", async () => {
+export const getProducts = createAsyncThunk(
+  "getproducts", 
+  async () => {
   const response = await fetch("https://fakestoreapi.com/products");
   const data = await response.json();
   return data;
