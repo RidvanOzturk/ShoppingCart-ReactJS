@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BiSearch } from "react-icons/bi";
 import { AiOutlineHeart } from "react-icons/ai";
 import { SlBasket } from "react-icons/sl";
+import { useDispatch, useSelector } from "react-redux";
+import { getCartTotal } from "../../../redux/cartSlice";
 const NavbarRight = () => {
+  const dispatch = useDispatch()
+  const {carts} = useSelector(state=> state.carts)
+  console.log(carts,"carts");
+
+  useEffect(()=> {
+    dispatch(getCartTotal())
+  },[dispatch])
   return (
     <div className="flex items-center gap-8">
       <div className="flex items-center border p-3 rounded-full bg-gray-200">
