@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartSlice";
 
 const DetailComp = ({ productDetail }) => {
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const [quantity, setQuantity] = useState(0);
 
@@ -14,7 +14,15 @@ const dispatch = useDispatch();
     if (quantity < productDetail?.rating?.count) setQuantity(quantity + 1);
   };
   const addBasket = () => {
-    dispatch(addToCart({id: productDetail?.id, title: productDetail?.title, image: productDetail?.image, price: productDetail?.price, quantity: quantity}))
+    dispatch(
+      addToCart({
+        id: productDetail?.id,
+        title: productDetail?.title,
+        image: productDetail?.image,
+        price: productDetail?.price,
+        quantity: quantity,
+      })
+    );
   };
 
   console.log(productDetail);
