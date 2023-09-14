@@ -5,7 +5,7 @@ import { addToCart } from "../../redux/cartSlice";
 const DetailComp = ({ productDetail }) => {
   const dispatch = useDispatch();
 
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
 
   const decrement = () => {
     if (quantity > 0) setQuantity(quantity - 1);
