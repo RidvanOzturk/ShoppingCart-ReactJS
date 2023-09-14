@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { json } from "react-router-dom";
 
 const fetchFromLocalStorage = () => {
   let cart = localStorage.getItem("cart");
@@ -10,12 +9,12 @@ const fetchFromLocalStorage = () => {
   }
 };
 
-const storeInLocalStorage = () => {
+const storeInLocalStorage = (data) => {
   localStorage.setItem("cart", JSON.stringify(data));
 };
 
 const initialState = {
-  cart: fetchFromLocalStorage(),
+  carts: fetchFromLocalStorage(),
   itemCount: 0,
   totalAmount: 0,
 };
@@ -25,12 +24,13 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action) => {
+
       const isItemCart = state.carts.find(
         (item) => item.id === action.payload.id
       );
 
       if (isItemCart) {
-        const tempCart = state.cart.map((item) => {
+        const tempCart = state.carts.map((item) => {
           if (item.id === action.payload.id) {
             let tempQty = item.quantity + action.payload.quantity;
             let tempTotalPrice = tempQty + item.price;
@@ -62,6 +62,7 @@ const cartSlice = createSlice({
       storeInLocalStorage(state.carts);
     },
     getCartTotal: (state) => {
+
       state.totalAmount = state.carts.reduce((cartTotal, cartItem) => {
         return (cartTotal += cartItem.totalPrice);
       }, 0);
@@ -69,6 +70,6 @@ const cartSlice = createSlice({
     },
   },
 });
-export const { addToCart, removeFromCart, clearCart, getCartTotal } =
-  cartSlice.actions;
+
+export const { addToCart, removeFromCart, clearCart, getCartTotal } = cartSlice.actions;
 export default cartSlice.reducer;
