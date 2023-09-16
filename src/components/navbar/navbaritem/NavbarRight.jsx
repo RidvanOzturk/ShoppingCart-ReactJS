@@ -6,12 +6,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCartTotal } from "../../../redux/cartSlice";
 import { useNavigate } from "react-router-dom";
 
-
 const NavbarRight = () => {
-
   const dispatch = useDispatch();
   const { carts } = useSelector((state) => state.carts);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   console.log(carts, "carts");
 
   useEffect(() => {
@@ -29,7 +27,7 @@ const NavbarRight = () => {
         <BiSearch size={28} />
       </div>
       <AiOutlineHeart size={28} />
-      <div onClick={()=> navigate("cart")} className="relative">
+      <div onClick={() => navigate("cart")} className="relative">
         <div className="absolute -top-3 -right-3 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center">
           {carts?.length}
         </div>
