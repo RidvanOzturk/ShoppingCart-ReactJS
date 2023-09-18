@@ -20,6 +20,7 @@ const Cart = () => {
           {carts?.map((cart, i) => (
             <CartComp key={i} cart={cart} />
           ))}
+          <div className="flex items-center justify-end text-2xl ">TOTAL AMOUNT :  <span className="underline font-bold text-3xl ml-2">  {totalAmount} $</span> </div>
         </div>
       ) : (
         <div>Your basket is empty...</div>
