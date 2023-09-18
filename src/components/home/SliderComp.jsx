@@ -27,7 +27,7 @@ const SliderComp = () => {
             </div>
           </div>
           <img
-            src="https://raw.githubusercontent.com/RidvanOzturk/ShoppingCart-ReactJS/main/ShoppingCart-ReactJS/src/assets/images/nike1.png"
+            src="https://raw.githubusercontent.com/RidvanOzturk/ShoppingCart-ReactJS/main/src/assets/images/nike1.png"
             alt=""
           />
         </div>
@@ -45,7 +45,7 @@ const SliderComp = () => {
             </div>
           </div>
           <img
-            src="https://raw.githubusercontent.com/RidvanOzturk/ShoppingCart-ReactJS/main/ShoppingCart-ReactJS/src/assets/images/nike2.png"
+            src="https://raw.githubusercontent.com/RidvanOzturk/ShoppingCart-ReactJS/main/src/assets/images/nike2.png"
             alt=""
           />
         </div>
